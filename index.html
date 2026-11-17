@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f2ed">
+  <title>Una sorpresa per te ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #f8f2ed;
+      color: #493c3c;
+      font-family: Georgia, 'Times New Roman', serif;
+      overflow-x: hidden;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .decoration {
+      position: absolute;
+      color: #d9a9a8;
+      opacity: 0.45;
+      font-size: 30px;
+      pointer-events: none;
+    }
+
+    .heart-one {
+      top: 13%;
+      left: 12%;
+      transform: rotate(-15deg);
+    }
+
+    .heart-two {
+      bottom: 17%;
+      right: 12%;
+      font-size: 42px;
+      transform: rotate(15deg);
+    }
+
+    .heart-three {
+      top: 25%;
+      right: 19%;
+      font-size: 17px;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 540px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      animation: appear 1.4s ease;
+    }
+
+    .small-title {
+      font-family: Arial, sans-serif;
+      font-size: 10px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #a98483;
+      margin-bottom: 35px;
+    }
+
+    .flower {
+      font-size: 36px;
+      margin-bottom: 22px;
+      color: #c48f91;
+    }
+
+    h1 {
+      font-size: clamp(38px, 8vw, 58px);
+      font-weight: normal;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      color: #594444;
+    }
+
+    .subtitle {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #8d7773;
+      font-style: italic;
+      margin: 0 auto 38px;
+      max-width: 370px;
+    }
+
+    .divider {
+      width: 45px;
+      height: 1px;
+      background: #c99b99;
+      margin: 0 auto 35px;
+    }
+
+    .start-button {
+      display: inline-block;
+      border: 1px solid #c99b99;
+      background: #c99b99;
+      color: white;
+      padding: 17px 34px;
+      border-radius: 50px;
+      font-family: Arial, sans-serif;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.35s ease;
+    }
+
+    .start-button:hover {
+      background: transparent;
+      color: #a87979;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(160, 115, 115, 0.12);
+    }
+
+    .footer {
+      margin-top: 55px;
+      font-size: 13px;
+      font-style: italic;
+      color: #ad9993;
+    }
+
+    /* VIDEO */
+
+    .video-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      background: #171414;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+    }
+
+    .video-screen.active {
+      display: flex;
+      animation: appear 0.7s ease;
+    }
+
+    .video-container {
+      width: 100%;
+      max-width: 1100px;
+      text-align: center;
+    }
+
+    .video-container video {
+      width: 100%;
+      max-height: 80vh;
+      display: block;
+      margin: 0 auto;
+      border-radius: 5px;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 25px;
+      right: 30px;
+      border: none;
+      background: transparent;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+      opacity: 0.8;
+    }
+
+    .video-caption {
+      color: #e7d8d4;
+      font-size: 14px;
+      font-style: italic;
+      margin-top: 18px;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .small-title {
+        font-size: 9px;
+        letter-spacing: 3px;
+      }
+
+      .subtitle {
+        font-size: 15px;
+      }
+
+      .footer {
+        margin-top: 45px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+
+    <span class="decoration heart-one">♡</span>
+    <span class="decoration heart-two">♡</span>
+    <span class="decoration heart-three">✧</span>
+
+    <section class="content">
+
+      <div class="small-title">
+        Un piccolo pensiero per te
+      </div>
+
+      <div class="flower">♡</div>
+
+      <h1>Per te, Giada.</h1>
+
+      <p class="subtitle">
+        Ci sono momenti che vorrei poter rivivere
+        ancora e ancora.
+        Questo è il mio modo per ricordarli insieme a te.
+      </p>
+
+      <div class="divider"></div>
+
+      <button class="start-button" onclick="startVideo()">
+        Apri la tua sorpresa ♡
+      </button>
+
+      <div class="footer">
+        Con tutto il mio amore.
+      </div>
+
+    </section>
+
+  </main>
+
+  <section class="video-screen" id="videoScreen">
+
+    <button class="close-button"
+      onclick="closeVideo()"
+      aria-label="Chiudi video">×</button>
+
+    <div class="video-container">
+
+      <video id="myVideo" controls playsinline>
+        <source src="video.mp4" type="video/mp4">
+        Il tuo browser non supporta la riproduzione video.
+      </video>
+
+      <p class="video-caption">
+        Ogni momento con te è un ricordo da custodire.
+      </p>
+
+    </div>
+
+  </section>
+
+  <script>
+    function startVideo() {
+      const screen = document.getElementById("videoScreen");
+      const video = document.getElementById("myVideo");
+
+      screen.classList.add("active");
+      video.play().catch(() => {
+        // Se la riproduzione automatica non è consentita,
+        // Giada potrà premere Play nel lettore.
+      });
+    }
+
+    function closeVideo() {
+      const screen = document.getElementById("videoScreen");
+      const video = document.getElementById("myVideo");
+
+      video.pause();
+      video.currentTime = 0;
+      screen.classList.remove("active");
+    }
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        closeVideo();
+      }
+    });
+  </script>
+
+</body>
+</html>
