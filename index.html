@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f8f2ed">
+
   <title>Una sorpresa per te ❤️</title>
 
   <style>
@@ -21,12 +22,15 @@
       overflow-x: hidden;
     }
 
+    /* PAGINA INIZIALE */
+
     .page {
       min-height: 100vh;
+      min-height: 100svh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 30px 20px;
+      padding: 35px 24px;
       position: relative;
       overflow: hidden;
     }
@@ -35,13 +39,13 @@
       position: absolute;
       color: #d9a9a8;
       opacity: 0.45;
-      font-size: 30px;
       pointer-events: none;
     }
 
     .heart-one {
       top: 13%;
       left: 12%;
+      font-size: 30px;
       transform: rotate(-15deg);
     }
 
@@ -55,7 +59,7 @@
     .heart-three {
       top: 25%;
       right: 19%;
-      font-size: 17px;
+      font-size: 20px;
     }
 
     .content {
@@ -86,7 +90,7 @@
       font-size: clamp(38px, 8vw, 58px);
       font-weight: normal;
       line-height: 1.2;
-      margin-bottom: 18px;
+      margin-bottom: 22px;
       color: #594444;
     }
 
@@ -96,7 +100,7 @@
       color: #8d7773;
       font-style: italic;
       margin: 0 auto 38px;
-      max-width: 370px;
+      max-width: 390px;
     }
 
     .divider {
@@ -111,7 +115,8 @@
       border: 1px solid #c99b99;
       background: #c99b99;
       color: white;
-      padding: 17px 34px;
+      padding: 18px 34px;
+      min-height: 56px;
       border-radius: 50px;
       font-family: Arial, sans-serif;
       font-size: 11px;
@@ -119,6 +124,7 @@
       text-transform: uppercase;
       cursor: pointer;
       transition: all 0.35s ease;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .start-button:hover {
@@ -128,14 +134,18 @@
       box-shadow: 0 8px 25px rgba(160, 115, 115, 0.12);
     }
 
+    .start-button:active {
+      transform: scale(0.97);
+    }
+
     .footer {
       margin-top: 55px;
-      font-size: 13px;
+      font-size: 14px;
       font-style: italic;
       color: #ad9993;
     }
 
-    /* VIDEO */
+    /* SCHERMATA VIDEO */
 
     .video-screen {
       position: fixed;
@@ -155,13 +165,16 @@
 
     .video-container {
       width: 100%;
-      max-width: 1100px;
+      max-width: 650px;
       text-align: center;
     }
 
     .video-container video {
       width: 100%;
       max-height: 80vh;
+      max-height: 80svh;
+      aspect-ratio: 9 / 16;
+      object-fit: contain;
       display: block;
       margin: 0 auto;
       border-radius: 5px;
@@ -174,7 +187,7 @@
       border: none;
       background: transparent;
       color: white;
-      font-size: 30px;
+      font-size: 32px;
       cursor: pointer;
       opacity: 0.8;
     }
@@ -186,35 +199,117 @@
       margin-top: 18px;
     }
 
+    /* ANIMAZIONI */
+
     @keyframes appear {
       from {
         opacity: 0;
         transform: translateY(15px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
       }
     }
 
-    @media (max-width: 480px) {
+    /* OTTIMIZZAZIONE SMARTPHONE */
+
+    @media (max-width: 600px) {
+
+      .page {
+        padding: 35px 24px;
+      }
+
+      .content {
+        max-width: 100%;
+      }
+
       .small-title {
         font-size: 9px;
         letter-spacing: 3px;
+        margin-bottom: 28px;
+      }
+
+      .flower {
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: clamp(34px, 9vw, 46px);
+        line-height: 1.2;
+        margin-bottom: 22px;
       }
 
       .subtitle {
-        font-size: 15px;
+        font-size: 16px;
+        line-height: 1.9;
+        max-width: 360px;
+        margin-bottom: 35px;
+      }
+
+      .divider {
+        margin-bottom: 32px;
+      }
+
+      .start-button {
+        width: 100%;
+        max-width: 310px;
+        min-height: 56px;
+        padding: 17px 20px;
+        font-size: 10px;
+        letter-spacing: 1.5px;
       }
 
       .footer {
         margin-top: 45px;
+        font-size: 14px;
+      }
+
+      .heart-one {
+        top: 8%;
+        left: 7%;
+      }
+
+      .heart-two {
+        bottom: 8%;
+        right: 7%;
+      }
+
+      .heart-three {
+        top: 18%;
+        right: 9%;
+      }
+
+      .video-screen {
+        padding: 15px;
+      }
+
+      .video-container video {
+        max-height: 75svh;
+        width: 100%;
+        object-fit: contain;
+      }
+
+      .close-button {
+        top: 12px;
+        right: 18px;
+        font-size: 32px;
+      }
+
+      .video-caption {
+        font-size: 13px;
+        line-height: 1.6;
       }
     }
+
   </style>
 </head>
 
 <body>
+
+  <!-- PAGINA DI BENVENUTO -->
 
   <main class="page">
 
@@ -230,12 +325,13 @@
 
       <div class="flower">♡</div>
 
-      <h1>Per te, Giada.</h1>
+      <h1>Buon compleanno Principessa</h1>
 
       <p class="subtitle">
-        Ci sono momenti che vorrei poter rivivere
-        ancora e ancora.
-        Questo è il mio modo per ricordarli insieme a te.
+        Il giorno più importante dell'anno è arrivato
+        e tu sei invecchiata un altro anno...
+        spero di festeggiare altre 100 volte insieme
+        a te questo giorno speciale ❤️
       </p>
 
       <div class="divider"></div>
@@ -245,18 +341,23 @@
       </button>
 
       <div class="footer">
-        Con tutto il mio amore.
+        Love You ❤️
       </div>
 
     </section>
 
   </main>
 
+  <!-- SCHERMATA DEL VIDEO -->
+
   <section class="video-screen" id="videoScreen">
 
-    <button class="close-button"
+    <button
+      class="close-button"
       onclick="closeVideo()"
-      aria-label="Chiudi video">×</button>
+      aria-label="Chiudi video">
+      ×
+    </button>
 
     <div class="video-container">
 
@@ -273,15 +374,19 @@
 
   </section>
 
+  <!-- FUNZIONI -->
+
   <script>
+
     function startVideo() {
       const screen = document.getElementById("videoScreen");
       const video = document.getElementById("myVideo");
 
       screen.classList.add("active");
+
       video.play().catch(() => {
         // Se la riproduzione automatica non è consentita,
-        // Giada potrà premere Play nel lettore.
+        // sarà possibile premere Play manualmente.
       });
     }
 
@@ -299,6 +404,7 @@
         closeVideo();
       }
     });
+
   </script>
 
 </body>
